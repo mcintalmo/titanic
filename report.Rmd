@@ -1,0 +1,164 @@
+---
+title: "Machine Learning with the Titanic Data Set"
+author: "Alex McIntosh"
+date: "8/19/2022"
+output:
+  bookdown::pdf_document2
+figsintext : yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, # Default to false considering I hope to use mostly graphs
+  message = FALSE,
+  warning = FALSE,
+  tidy = TRUE,
+  cahe = TRUE, # Set to FALSE to conserve memory
+  eval = TRUE # Set to TRUE for code to actually rune
+)
+options(digits = 3)
+source("src/analysis.R")
+```
+
+# Cover Page
+<!--
+- Title
+- Authors and their affiliations
+- Contacts
+- Name of publisher (if any)
+- Date of publication 
+--> 
+# Table of Contents
+# Executive Summary / Abstract
+<!-- 
+> Nothing is more powerful than explaining the crux of your arguments in three paragraphs or less.
+- Set up the problem for the reader
+- Follow up of relevant research
+- Point out the gap in knowledge being filled 
+- Formally introduce research questions and hypothesis
+--> 
+
+# Methodology
+<!-- 
+- Research methods
+- Data sources
+- Explain new data collection (if any)
+- Literature review to defend choice of variables, data, methods 
+--> 
+```{r numeric_summary}
+numeric_summary
+```
+
+```{r}
+age_histogram
+age_surival_rate
+sib_sb_histogram
+sib_sb_survival_rate
+par_ch_histogram
+par_ch_survival_rate
+fare_histogram
+class_bar
+sex_bar
+embarked_bar
+```
+
+<!-- Worth finding a way to add original names back in?-->
+```{r}
+last_names %>%
+  head()
+```
+
+```{r}
+title_histogram
+title_survival_rate
+last_name_histogram
+last_name_survival_rate
+```
+
+```{r}
+cabins
+```
+
+```{r}
+cabin_histogram
+cabin_survial_rate
+cabin_histogram_facet
+```
+
+```{r}
+missing_data
+```
+
+```{r}
+logistic_variable_importance
+```
+
+```{r}
+rf_variable_importance
+```
+
+```{r}
+train_ensemble_scatter_plot
+```
+
+# Results
+<!--
+- Descriptive statistics
+- Illustrative graphics
+- Formally test the hypothesis 
+--> 
+```{r}
+results_scatter_plot
+```
+
+```{r}
+results
+```
+
+
+```{r}
+validation %>%
+  head()
+```
+
+Score of 0.75837, which in this case was determined by accuracy.
+This means that I correctly predicted survival for 317 of the 418 passengers in 
+the test set.
+0.75837 is significantly lower than the some of the accuracies reached during
+model development.
+This is a clear indication that the methods were over-trained on the training data
+set.
+
+# Discussion
+<!--
+- Use the results to show how the knowledge gaps introduced in the executive summary have been filled
+- Recognize when the results were not as substantial as originally believed
+--> 
+
+# Conclusion
+
+
+<!-- 
+- Promote your findings
+- Identify possible future research
+--> 
+
+# Acknowledgements
+<!-- 
+- Acknowledging support is never a bad idea 
+--> 
+
+# References
+# Appendices (if needed)
+
+<!-- 
+Publication Checklist:
+- [ ] Have you told readers, at the outset, what they might gain by reading your paper?
+- [ ] Have you made the aim of your work clear?
+- [ ] Have you explained the significance of your contribution?
+- [ ] Have you set your work in the appropriate context by giving sufficient background (including a complete set of relevant references) to your work?
+- [ ] Have you addressed the question of practicality and usefulness?
+- [ ] Have you identified future developments that might result from your work?
+- [ ] Have you structured your paper in a clear and logical fashion?
+--> 
+
